@@ -1,6 +1,8 @@
 import { Button, Nav, Navbar } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
+//Nav.Link active={false} - for problems with multiple active links
+
 const Navigation = () => {
     return (
         <Navbar bg="dark" variant="dark" sticky="top">
@@ -10,7 +12,7 @@ const Navigation = () => {
             <Nav variant="pills" fill="true">
 
                 <LinkContainer exact to="/">
-                    <Nav.Link eventKey="home" >Home</Nav.Link>
+                    <Nav.Link active={false} eventKey="home" >Home</Nav.Link>
                 </LinkContainer>
 
                 <LinkContainer to="/catalog">

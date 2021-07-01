@@ -14,12 +14,12 @@ const Welcome = () => {
             <br />
             <p> In order to create your own music catalog, you have to be
                 <LinkContainer style={{display:"inline-block"}} to="/login">
-                    <Nav.Link>signed in</Nav.Link>
+                    <Nav.Link eventKey="login">signed in</Nav.Link>
                 </LinkContainer>
             </p>
             <p>If you're new and don't have an account yet, you could
                 <LinkContainer style={{display:"inline-block"}} to="/register">
-                    <Nav.Link>register here</Nav.Link>
+                    <Nav.Link eventKey="register">register here</Nav.Link>
                 </LinkContainer>
             </p>
 
