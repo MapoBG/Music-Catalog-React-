@@ -1,11 +1,13 @@
-import { Nav, Navbar } from 'react-bootstrap';
+import { Button, Nav, Navbar } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
 const Navigation = () => {
     return (
         <Navbar bg="dark" variant="dark" sticky="top">
             <Navbar.Brand>Music Catalog</Navbar.Brand>
-            <Nav variant="pills" fill="true" justify="true">
+            {/* <Navbar.Toggle  aria-controls="basic-navbar-nav" /> */}
+            <Navbar.Collapse id="basic-navbar-nav" />
+            <Nav variant="pills" fill="true">
 
                 <LinkContainer exact to="/">
                     <Nav.Link eventKey="home" >Home</Nav.Link>
@@ -16,8 +18,10 @@ const Navigation = () => {
                 </LinkContainer>
 
                 <LinkContainer to="/my-catalog">
-                    <Nav.Link eventKey="my-atalog" >My Playlist</Nav.Link>
+                    <Nav.Link eventKey="my-catalog" >My Playlist</Nav.Link>
                 </LinkContainer>
+
+                <Button >Logout</Button>
 
                 <LinkContainer to="/login">
                     <Nav.Link eventKey="login" >Login</Nav.Link>
