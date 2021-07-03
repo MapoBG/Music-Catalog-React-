@@ -8,7 +8,7 @@ const Welcome = () => {
             <br />
             <br />
             <br />
-            <h3>Here you can create playlists with your favourite songs or browse through other's playlists.</h3>
+            <h3>Here you can create playlists with your favourite songs or browse through other's music catalogs.</h3>
             <br />
             <br />
             <br />
