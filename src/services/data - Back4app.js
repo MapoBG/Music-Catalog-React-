@@ -1,19 +1,27 @@
 import * as api from "./api.js";
 
-const host = api.settings.host;
+import Parse from 'parse/dist/parse.min.js';
 
-// const registerEP = "/users/register";
-// const loginEP = "/users/login";
-// const logoutEP = "/users/logout";
+const PARSE_APPLICATION_ID = 'KaAOxwTSXr5naCsbvW99ahBRtTI9kioHWsqjruiE';
+const PARSE_JAVASCRIPT_KEY = 'u5Y0ymPqbiyV5MFLNcrdALa2OpgJV0TikoFYDN2s';
+const host = 'https://parseapi.back4app.com/';
+Parse.initialize(PARSE_APPLICATION_ID, PARSE_JAVASCRIPT_KEY);
+Parse.serverURL = host;
+
+const registerEP = "/users/register";
+const loginEP = "/users/login";
+const logoutEP = "/users/logout";
 const dataEP = "/data/wiki";
 
-// api.settings.registerEP = registerEP;
-// api.settings.loginEP = loginEP;
-// api.settings.logoutEP = logoutEP;
+api.settings.host = host;
+api.settings.registerEP = registerEP;
+api.settings.loginEP = loginEP;
+api.settings.logoutEP = logoutEP;
 
-// export const logout = api.logout;
-// export const login = api.login;
-// export const register = api.register;
+export const logout = api.logout;
+export const login = api.login;
+export const register = api.register;
+
 
 export async function addItem(itemData) {
     return await api.post(host + dataEP, itemData);
