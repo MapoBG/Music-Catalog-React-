@@ -16,6 +16,7 @@ function gotError(err) {
 }
 
 export async function register(userData) {
+    userData.name = userData.email.split('@')[0];
     const user = new Backendless.User(userData);
 
     Backendless.UserService.register(user)

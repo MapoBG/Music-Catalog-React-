@@ -12,7 +12,7 @@ import * as data from './services/data';
 import { register, login } from './services/user';
 
 // register({ email: "test@abv.bg", password: '12345', name: 'Test' });
-login({ email: "test@abv.bg", password: '12345', name: 'Test' });
+// login({ email: "test@abv.bg", password: '12345', name: 'Test' });
 
 function App() {
   return (
