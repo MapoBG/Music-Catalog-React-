@@ -2,11 +2,11 @@ import { Route, Switch } from 'react-router-dom';
 
 import './App.css';
 
-import Login from './components/Login';
-import Navigation from './components/Navigation';
-import Register from './components/Register';
-import Welcome from './components/Welcome';
 import Layout from './components/Layout';
+import Navigation from './components/Navigation';
+import Welcome from './components/Welcome';
+import Login from './components/Login';
+import Register from './components/Register';
 
 import * as data from './services/data';
 import { register, login } from './services/user';

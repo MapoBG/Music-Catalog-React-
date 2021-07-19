@@ -16,21 +16,21 @@ const Navigation = () => {
                 </LinkContainer>
 
                 <LinkContainer to="/catalog">
-                    <Nav.Link eventKey="catalog" >Catalog</Nav.Link>
+                    <Nav.Link active={false} eventKey="catalog" >Catalog</Nav.Link>
                 </LinkContainer>
 
                 <LinkContainer to="/my-catalog">
-                    <Nav.Link eventKey="my-catalog" >My Playlist</Nav.Link>
+                    <Nav.Link active={false} eventKey="my-catalog" >My Playlist</Nav.Link>
                 </LinkContainer>
 
                 <Button >Logout</Button>
 
                 <LinkContainer to="/login">
-                    <Nav.Link eventKey="login" >Login</Nav.Link>
+                    <Nav.Link active={false} eventKey="login" >Login</Nav.Link>
                 </LinkContainer>
 
                 <LinkContainer to="/register">
-                    <Nav.Link eventKey="register">Register</Nav.Link>
+                    <Nav.Link active={false} eventKey="register">Register</Nav.Link>
                 </LinkContainer>
 
             </Nav>

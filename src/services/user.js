@@ -25,6 +25,7 @@ export async function register(userData) {
 }
 
 export async function login(userData) {
+    console.log(userData);
     userData.stayLoggedIn = true;
 
     Backendless.UserService.login(userData.email, userData.password, userData.stayLoggedIn)

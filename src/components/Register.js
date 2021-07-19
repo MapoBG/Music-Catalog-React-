@@ -4,20 +4,19 @@ import { useState } from 'react';
 
 import { register } from '../services/user';
 
-const Register = () => {
+const Register = (props) => {
     const [value, setValue] = useState({});
 
     const onBlur = ({ target }) => {
         //check value for errors and then setValue
         const object = { [target.name]: target.value };
         setValue(oldState => Object.assign(oldState, object));
-        console.log(value);
     };
 
     const onFormSubmit = (e) => {
         e.preventDefault();
-        register(value);
-        setValue(oldState => oldState = {});
+        register(value)
+            .then(() => props.history.push("/login"));
     }
 
     return (
