@@ -7,6 +7,7 @@ import Navigation from './components/Navigation';
 import Welcome from './components/Welcome';
 import Login from './components/Login';
 import Register from './components/Register';
+import ErrorPage from './components/ErrorPage';
 
 import * as data from './services/data';
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" exact component={Welcome} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
+          <Route component={ErrorPage} />
         </Switch>
       </Layout>
     </>
