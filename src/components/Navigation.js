@@ -2,9 +2,9 @@ import { useContext } from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
-import AuthContext from '../services/context';
 import UserLogged from './UserLogged';
 import UserNotLogged from './UserNotLogged';
+import AuthContext from '../services/context';
 
 //Nav.Link active={false} - for problems with multiple active links
 

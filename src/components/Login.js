@@ -1,16 +1,22 @@
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 
 import { login } from '../services/auth';
+import AuthContext from '../services/context';
 
 const Login = (props) => {
+    const authContext = useContext(AuthContext);
     const [value, setValue] = useState({});
 
     const onBlur = ({ target }) => {
         //check value for errors
         const inputToCheck = { [target.name]: target.value };
     };
+
+    const useUserLoggedIn = () => {
+        authContext.login();
+    }
 
     const onFormSubmit = (e) => {
         e.preventDefault();
@@ -24,6 +30,7 @@ const Login = (props) => {
         setValue(oldState => Object.assign(oldState, loginInfo));
 
         login(value)
+            .then(useUserLoggedIn)
             .then(() => props.history.push("/"));
     };
 
