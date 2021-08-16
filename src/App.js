@@ -1,4 +1,5 @@
 import { Route, Switch } from 'react-router-dom';
+import { useState } from 'react';
 
 import './App.css';
 
@@ -13,8 +14,13 @@ import AuthContext from './services/context';
 import * as data from './services/data';
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  const login = () => setLoggedIn(true);
+  const logout = () => setLoggedIn(false);
+
   return (
-    <AuthContext.Provider>
+    <AuthContext.Provider value={{isLoggedIn: loggedIn, login, logout}}>
       <Navigation />
       <Layout>
         <Switch>
@@ -24,7 +30,7 @@ function App() {
           <Route component={ErrorPage} />
         </Switch>
       </Layout>
-    </AuthContext.Provider>
+    </AuthContext.Provider >
   );
 }
 

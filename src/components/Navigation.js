@@ -1,10 +1,16 @@
-import { Button, Nav, Navbar } from 'react-bootstrap';
+import { useContext } from 'react';
+import { Nav, Navbar } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import { logout } from '../services/auth';
+
+import AuthContext from '../services/context';
+import UserLogged from './UserLogged';
+import UserNotLogged from './UserNotLogged';
 
 //Nav.Link active={false} - for problems with multiple active links
 
 const Navigation = () => {
+    const authContext = useContext(AuthContext);
+
     return (
         <Navbar bg="dark" variant="dark" sticky="top">
             <Navbar.Brand>Music Catalog</Navbar.Brand>
@@ -20,19 +26,7 @@ const Navigation = () => {
                     <Nav.Link active={false} eventKey="catalog" >Catalog</Nav.Link>
                 </LinkContainer>
 
-                <LinkContainer to="/my-catalog">
-                    <Nav.Link active={false} eventKey="my-catalog" >My Playlist</Nav.Link>
-                </LinkContainer>
-
-                <Button onClick={logout} >Logout</Button>
-
-                <LinkContainer to="/login">
-                    <Nav.Link active={false} eventKey="login" >Login</Nav.Link>
-                </LinkContainer>
-
-                <LinkContainer to="/register">
-                    <Nav.Link active={false} eventKey="register">Register</Nav.Link>
-                </LinkContainer>
+                {authContext.isLoggedIn ? <UserLogged /> : <UserNotLogged />}
 
             </Nav>
         </Navbar>

@@ -8,19 +8,25 @@ const Welcome = () => {
             <br />
             <br />
             <br />
-            <h3>Here you can create playlists with your favourite songs or browse through other's music catalogs.</h3>
+            <h3>Here you can create playlists with your favourite songs or
+                <LinkContainer style={{ display: "inline-block" }} to="/catalog">
+                    <Nav.Link eventKey="login">browse</Nav.Link>
+                </LinkContainer>
+                through other's music catalogs.</h3>
             <br />
             <br />
             <br />
-            <p> In order to create your own music catalog, you have to be
-                <LinkContainer style={{display:"inline-block"}} to="/login">
+            <p> In order to create and access your own music catalog, you have to be
+                <LinkContainer style={{ display: "inline-block" }} to="/login">
                     <Nav.Link eventKey="login">signed in</Nav.Link>
                 </LinkContainer>
+                .
             </p>
             <p>If you're new and don't have an account yet, you could
-                <LinkContainer style={{display:"inline-block"}} to="/register">
+                <LinkContainer style={{ display: "inline-block" }} to="/register">
                     <Nav.Link eventKey="register">register here</Nav.Link>
                 </LinkContainer>
+                .
             </p>
 
         </div>
