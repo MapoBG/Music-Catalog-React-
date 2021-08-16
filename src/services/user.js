@@ -1,13 +1,15 @@
 import Backendless from "backendless/dist/backendless";
 
 function userRegistered(user) {
-    console.log(user);
     console.log(user.name + " has been registered");
 }
 
 function userLoggedIn(user) {
-    console.log(user);
     console.log(user.email + " has logged in");
+}
+
+function userLoggedOut() {
+    console.log("user has been logged out");
 }
 
 function gotError(err) {
@@ -25,7 +27,6 @@ export async function register(userData) {
 }
 
 export async function login(userData) {
-    console.log(userData);
     userData.stayLoggedIn = true;
 
     Backendless.UserService.login(userData.email, userData.password, userData.stayLoggedIn)
@@ -33,8 +34,8 @@ export async function login(userData) {
         .catch(gotError);
 }
 
-// export async function logout() {
-//     await get(settings.host + settings.logoutEP);
-
-//     sessionStorage.clear();
-// }
+export function logout() {
+    Backendless.UserService.logout()
+        .then(userLoggedOut)
+        .catch(gotError);
+}

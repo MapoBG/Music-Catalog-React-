@@ -1,5 +1,6 @@
 import { Button, Nav, Navbar } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+import { logout } from '../services/user';
 
 //Nav.Link active={false} - for problems with multiple active links
 
@@ -23,7 +24,7 @@ const Navigation = () => {
                     <Nav.Link active={false} eventKey="my-catalog" >My Playlist</Nav.Link>
                 </LinkContainer>
 
-                <Button >Logout</Button>
+                <Button onClick={logout} >Logout</Button>
 
                 <LinkContainer to="/login">
                     <Nav.Link active={false} eventKey="login" >Login</Nav.Link>

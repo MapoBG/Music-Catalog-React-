@@ -8,16 +8,25 @@ const Login = (props) => {
     const [value, setValue] = useState({});
 
     const onBlur = ({ target }) => {
-        //check value for errors and then setValue
-        const object = { [target.name]: target.value };
-        setValue(oldState => Object.assign(oldState, object));
+        //check value for errors
+        const inputToCheck = { [target.name]: target.value };
     };
 
     const onFormSubmit = (e) => {
         e.preventDefault();
+        //check value for errors
+        const form = e.target;
+        const loginInfo = {
+            'email': form.email.value,
+            'password': form.password.value,
+        };
+
+        setValue(oldState => Object.assign(oldState, loginInfo));
+
         login(value)
             .then(() => props.history.push("/"));
-    }
+    };
+
     return (
         <Form onSubmit={onFormSubmit}>
             <Form.Group controlId="formBasicEmail">
