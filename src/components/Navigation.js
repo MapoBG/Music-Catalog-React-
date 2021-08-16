@@ -1,6 +1,6 @@
 import { Button, Nav, Navbar } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import { logout } from '../services/user';
+import { logout } from '../services/auth';
 
 //Nav.Link active={false} - for problems with multiple active links
 

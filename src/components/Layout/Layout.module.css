@@ -1,7 +1,7 @@
 .layout {
     color: rgb(179, 255, 0);
     text-shadow: 0 0 0.01em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
-    background-image: url(../assets/musicImage.jpg);
+    background-image: url(../../assets/musicImage.jpg);
     background-size: cover;
     width: 100vw;
     height: 95vh;

@@ -2,7 +2,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
 
-import { login } from '../services/user';
+import { login } from '../services/auth';
 
 const Login = (props) => {
     const [value, setValue] = useState({});
